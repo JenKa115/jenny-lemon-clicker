@@ -1,3 +1,6 @@
+
+import Header from './components/Header'
+
 import Booster from './components/Booster'
 
 import Balance from './components/Balance'
@@ -11,13 +14,14 @@ function App() {
   return (
     <>
       <div>
-        <Balance total="155" />
+        <Header>lemon clicker</Header>
+        <Balance total="157" />
         <Lemon />
-        
-        <Booster value="3.4" />
+        <Booster value="3.2" />
       </div>  
     </>
   )
+
 
 }
 
