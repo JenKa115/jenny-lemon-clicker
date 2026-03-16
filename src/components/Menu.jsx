@@ -23,7 +23,6 @@ function Menu(props) {
     </div>
   )
 
-
   
 }
   
