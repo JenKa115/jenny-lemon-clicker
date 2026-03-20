@@ -1,4 +1,6 @@
 
+import items from './config/items.js'
+
 import AppRouter from './components/AppRouter'
 
 import { useState } from 'react'
@@ -7,6 +9,10 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+
+    // Luodaan tilamuuttuja, johon tallennetaan tuotelista.
+  const [storeitems,setStoreitems] = useState(items)
+
 
     // Luodaan tilamuuttuja, johon tallennetaan pelin laskennalliset tiedot.
   const [stats, setStats] = useState({clicks: 0, balance: 0, increase: 1, itemstobuy: 0})
@@ -25,9 +31,12 @@ function App() {
   }
 
 
-  return (
-    <AppRouter stats={stats} handleClick={handleClick} />
+   return (
+    <AppRouter stats={stats} 
+               storeitems={storeitems} 
+               handleClick={handleClick} />
   )
+
 
 
 
