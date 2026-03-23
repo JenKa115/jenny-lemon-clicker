@@ -1,3 +1,5 @@
+import Stat from '../components/Stat'
+
 import Header from '../components/Header'
 
 function Settings(props) {
@@ -8,7 +10,12 @@ function Settings(props) {
         <div className="settings">
           <h2>lemon stats</h2>
           <div>
-            TODO stats
+            <Stat title="in bank" value={props.stats.balance} />
+            <Stat title="per click" value={props.stats.increase} />
+            <Stat title="collected" value={props.stats.collected} />
+            <Stat title="clicks" value={props.stats.clicks} />
+            <Stat title="upgrades" value={props.stats.upgrades} />
+
           </div>
         </div>
         TODO reset
