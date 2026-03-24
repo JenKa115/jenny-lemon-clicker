@@ -1,4 +1,6 @@
 
+import useLocalStorage from './utils/useLocalStorage'
+
 import getPurchasableItems from './utils/getPurchasableItems'
 
 import round from './utils/round'
@@ -24,8 +26,10 @@ function App() {
   }
 
 
-    // Luodaan tilamuuttuja, johon tallennetaan tuotelista.
-  const [storeitems,setStoreitems] = useState(items)
+    // Luodaan taltio, johon tallennetaan tuotelista.
+  const [storeitems,setStoreitems, resetStoreitems] = useLocalStorage('lemon-items',items)
+
+  
 
 
     // Esitellään pelin laskennalliset alkuarvot.
@@ -38,8 +42,10 @@ function App() {
     collected: 0
   }
 
-  // Luodaan tilamuuttuja, johon tallennetaan pelin laskennalliset tiedot.
-  const [stats, setStats] = useState(initialstats)
+ 
+  // Luodaan taltio, johon tallennetaan pelin laskennalliset tiedot.
+  const [stats, setStats, resetStats] = useLocalStorage('lemon-stats',initialstats)
+
 
 
 
@@ -102,11 +108,12 @@ function App() {
     }
   }
 
-  const handleReset = () => {
-    // Päivitetään tilamuuttujat alkuarvoihin.
-    setStats(initialstats)
-    setStoreitems(items)
+    const handleReset = () => {
+    // Palautetaan taltiot alkuarvoihin.
+    resetStats()
+    resetStoreitems()
   }
+
 
 
    return (
