@@ -8,8 +8,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react(),
             VitePWA({ manifest: manifest,
-              workbox: {
-                globPatterns: ['**/*.{js,css,html,png,woff2}']
-              }
-             })],
+                      workbox: {
+                        globPatterns: ['**/*.{js,css,html,png,svg,woff2}']
+                      } })],
 })
